@@ -1,17 +1,15 @@
 # POLICY EVALUATION
 
 ## AIM
-To evaluate and compare different policies in the Frozen Lake environment and find the best policy for reaching the goal successfully.
+To develop a Python program to evaluate the given policy.
 
 ## PROBLEM STATEMENT
-In the Frozen Lake environment, an agent must navigate from the start to the goal while avoiding holes. Movements are uncertain due to slipperiness. A policy guides the agent’s actions, but not all policies are effective. The task is to:
-
-Evaluate a given policy (V1) using policy evaluation. Create and test a new policy (V2) to improve performance. Compare both policies based on success rate and rewards. Find the best policy for safely reaching the goal. This helps in identifying the most efficient way to complete the task.
-
+To find best policy from two policies which are defined by user using policy evaluation function. Where the mdp includes 16 states from 0-15, 0 is the starting state, assigning some 4 random state as holes and 15 is the goal state and then we need to calculate optimal state value function for each state such that we can reach goal using optimal policy using policy evaluation.
 ## POLICY EVALUATION FUNCTION
-```python
+```
 def policy_evaluation(pi, P, gamma=1.0, theta=1e-10):
     prev_V = np.zeros(len(P), dtype=np.float64)
+    # Write your code here to evaluate the given policy
     while True:
       V=np.zeros(len(P))
       for s in range(len(P)):
@@ -22,21 +20,22 @@ def policy_evaluation(pi, P, gamma=1.0, theta=1e-10):
       prev_V=V.copy()
     return V
 ```
-
 ## OUTPUT:
-#### Policy 1:
-![image](https://github.com/user-attachments/assets/1064cb60-e5a3-44c4-8367-5fe99d7cc96f)
-![image](https://github.com/user-attachments/assets/fa73d672-a911-44f7-933e-6604402bac72)
-![image](https://github.com/user-attachments/assets/97a0b2ef-b42b-4c18-ba84-ac6208d789a6)
+### First policy:
 
-#### Policy 2:
-![image](https://github.com/user-attachments/assets/4532821f-b91e-4b54-8433-5cb26a42de94)
-![image](https://github.com/user-attachments/assets/5fbcbdec-b80d-4ea8-a17d-03936970a84f)
-![image](https://github.com/user-attachments/assets/12b129dc-47c4-4f42-a206-7ce1dd4268c6)
-![image](https://github.com/user-attachments/assets/cf96c83b-7170-473e-8c05-bf992b98a873)
+![image](https://github.com/user-attachments/assets/fc9f4486-6d6c-48a6-b075-7ea4053718c1)
+![image](https://github.com/user-attachments/assets/acd002ba-088b-42f0-956b-00e830dbe6b3)
 
-#### V1>=v2
-![image](https://github.com/user-attachments/assets/9d9177dc-0af2-4067-b59a-a53b7dac724a)
+### Second policy:
+![Screenshot 2025-05-14 151609](https://github.com/user-attachments/assets/f36a0922-36c4-4395-9217-d92463fdcf4c)
+
+
+![image](https://github.com/user-attachments/assets/92ddac3f-c022-49cf-92e4-ac0669026e63)
+
+### First and Second compared them:
+![image](https://github.com/user-attachments/assets/0b64f2ca-6e1f-423e-92c8-2540224b102e)
+
+
 
 ## RESULT:
 Thus, The Python program to evaluate the given policy is successfully executed.
